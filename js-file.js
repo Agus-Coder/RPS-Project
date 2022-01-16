@@ -32,22 +32,18 @@ if(final == 1){
 
 }
 
+
 function playerPlay(){
-
-    const rock = document.querySelector('#Rock')
-    const paper = document.querySelector('#Paper')
-    const scissors = document.querySelector('#Scissors')
-    
-    rock.addEventListener('click', () =>{
-        "Piedra"
-    })
-    paper.addEventListener('click', () =>{
-        "Papel"
-    })
-    scissors.addEventListener('click', () =>{
-        "Tijera"
-    })
-
+    let selection = playerSelection();
+    let final;
+    if(selection==1){
+        final = "Piedra";
+    }else if (selection==2){
+        final = "Papel";
+    }else if(selection==3){
+        final = "Tijera";
+    }
+    return final
 }
 
 function playround(){
@@ -107,3 +103,19 @@ function game(){
     }
 }
 
+const rock = document.querySelector('#Rock')
+const paper = document.querySelector('#Paper')
+const scissors = document.querySelector('#Scissors')
+
+rock.addEventListener('click', () =>{
+    alert("hello, i'm working")
+})
+paper.addEventListener('click', () =>{
+    alert("hello, i'm working")
+})
+scissors.addEventListener('click', () =>{
+    console.log("hello, i'm working")
+})
+
+const start = document.querySelector('#start')
+start.addEventListener('click', (game))
