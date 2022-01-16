@@ -105,3 +105,13 @@ function game(){
 const rock = document.querySelector('#Rock')
 const paper = document.querySelector('#Paper')
 const scissors = document.querySelector('#Scissors')
+
+rock.addEventListener('click', () =>{
+    "Piedra"
+})
+paper.addEventListener('click', () =>{
+    "Papel"
+})
+scissors.addEventListener('click', () =>{
+    "Tijera"
+})
