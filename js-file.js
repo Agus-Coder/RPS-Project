@@ -101,3 +101,7 @@ function game(){
         console.log("La CPU ha ganado! Intenta de nuevo")
     }
 }
+
+const rock = document.querySelector('#Rock')
+const paper = document.querySelector('#Paper')
+const scissors = document.querySelector('#Scissors')
