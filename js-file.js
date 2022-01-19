@@ -1,121 +1,94 @@
-// function playerPlay(){
-//     let number = Math.floor(Math.random() * 3);
-//     let final = number + 1;
-    
-//     if(final == 1){
-//         return "Piedra"
-//     }else if(final == 2){
-//         return "Papel"
-//     }else if(final == 3){
-//         return "Tijera"
-//     }
-// }
+let playerSelection = 0;
+let computerSelection = 0;
+let empate = 'Empate!';
+let cpuWin = 'La CPU Ha ganado! Intentalo de nuevo'
+let userWin = 'Le ganaste a la CPU! Felicitaciones!'
 
-let winner = '';
-let empate = "Empate!";
-let cpuWin = "Gana la CPU!";
-let userWin = "Gana el User!"
-let cpuScore = 0;
-let userScore = 0;
-
-function computerPlay(){
-    let number = Math.floor(Math.random() * 3);
-    let final = number + 1;
-
-if(final == 1){
-    return "Piedra"
-}else if(final == 2){
-    return "Papel"
-}else if(final == 3){
-    return "Tijera"
-}
-
-}
-
-
-function playerPlay(){
-    let selection = playerSelection();
-    let final;
-    if(selection==1){
-        final = "Piedra";
-    }else if (selection==2){
-        final = "Papel";
-    }else if(selection==3){
-        final = "Tijera";
-    }
-    return final
-}
-
-function playround(){
-
-    let player = playerPlay();
-    let cpu = computerPlay();
-
-
-    if(player === cpu){
-        winner = empate; 
-        return winner
-    }
-    else if(
-    player=="Tijera" && cpu=="Piedra" ||
-    player=="Papel"  && cpu=="Tijera" ||
-    player=="Piedra" && cpu=="Papel"  ) {
-
-        winner = cpuWin; 
-        return winner
-    }
-    else if(
-    cpu=="Tijera" && player=="Piedra" ||
-    cpu=="Papel"  && player=="Tijera" ||
-    cpu=="Piedra" && player=="Papel"  ){
-    
-        winner = userWin; 
-        return winner
-        }
-}
-
-function game(){
-
-    for(let i=0; i<5 ; i++){
-        playround();
-            
-        if(winner == cpuWin){
-            cpuScore += 1;
-            console.log(cpuWin);
-        }
-        if(winner == userWin){
-            userScore += 1;
-            console.log(userWin);
-        }
-        if(winner == empate){
-            console.log(empate);
-        }
-
-    console.log(cpuScore)
-    console.log(userScore)
-    }
-
-    if(cpuScore<userScore){
-        console.log("Has ganado contra la CPU! Felicitaciones")
-    }
-    if(cpuScore<userScore){
-        console.log("La CPU ha ganado! Intenta de nuevo")
-    }
-}
-
+const start = document.querySelector('#start')
 const rock = document.querySelector('#Rock')
 const paper = document.querySelector('#Paper')
 const scissors = document.querySelector('#Scissors')
 
-rock.addEventListener('click', () =>{
-    alert("hello, i'm working")
-})
-paper.addEventListener('click', () =>{
-    alert("hello, i'm working")
-})
-scissors.addEventListener('click', () =>{
-    console.log("hello, i'm working")
-})
 
-const start = document.querySelector('#start')
-start.addEventListener('click', (game))
+
+function computerPlay(){
+    let number = Math.floor(Math.random() * 3) +1;
+    return number;
+}
+
+function playround(){
+
+    if(playerSelection === computerSelection){
+        console.log(empate);
+    }
+    else if(
+        playerSelection==3 && computerSelection==1 ||
+        playerSelection==2 && computerSelection==3 ||
+        playerSelection==1 && computerSelection==2  ) {
+
+            console.log(cpuWin)
+    }
+    else if(
+        computerSelection==3 && playerSelection==1 ||
+        computerSelection==2 && playerSelection==3 ||
+        computerSelection==1 && playerSelection==2  ){
+
+            console.log(userWin)
+        }
+}
+
+function playerRock(){
+    playerSelection = 1;
+    computerSelection = computerPlay();
+    playround();
+}
+
+function playerPaper(){
+    playerSelection = 2;
+    computerSelection = computerPlay();
+    playround();
+}
+
+function playerScissors(){
+    playerSelection = 3;
+    computerSelection = computerPlay();
+    playround();
+}
+
+function inicio(){
+    rock.addEventListener('click', playerRock)
+    paper.addEventListener('click', playerPaper)
+    scissors.addEventListener('click', playerScissors)
+}
+
+start.addEventListener('click', inicio)
+
+
+// function game(){
+
+//     for(let i=0; i<5 ; i++){
+//         playround();
+            
+//         if(winner == cpuWin){
+//             cpuScore += 1;
+//             console.log(cpuWin);
+//         }
+//         if(winner == userWin){
+//             userScore += 1;
+//             console.log(userWin);
+//         }
+//         if(winner == empate){
+//             console.log(empate);
+//         }
+
+//     console.log(cpuScore)
+//     console.log(userScore)
+//     }
+
+//     if(cpuScore<userScore){
+//         console.log("Has ganado contra la CPU! Felicitaciones")
+//     }
+//     if(cpuScore<userScore){
+//         console.log("La CPU ha ganado! Intenta de nuevo")
+//     }
+// }
