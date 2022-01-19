@@ -83,37 +83,3 @@ function playerScissors(){
     playround();
     console.log(partidas)
 }
-
-
-
-
-
-
-// function game(){
-
-//     for(let i=0; i<5 ; i++){
-//         playround();
-            
-//         if(winner == cpuWin){
-//             cpuScore += 1;
-//             console.log(cpuWin);
-//         }
-//         if(winner == userWin){
-//             userScore += 1;
-//             console.log(userWin);
-//         }
-//         if(winner == empate){
-//             console.log(empate);
-//         }
-
-//     console.log(cpuScore)
-//     console.log(userScore)
-//     }
-
-//     if(cpuScore<userScore){
-//         console.log("Has ganado contra la CPU! Felicitaciones")
-//     }
-//     if(cpuScore<userScore){
-//         console.log("La CPU ha ganado! Intenta de nuevo")
-//     }
-// }
