@@ -2,7 +2,7 @@ let playerSelection = 0;
 let computerSelection = 0;
 let empate = 'Empate!';
 let cpuWin = 'La CPU Ha ganado! Intentalo de nuevo'
-let playerWin = 'Le ganaste a la CPU! Felicitaciones!'
+let userWin = 'Le ganaste a la CPU! Felicitaciones!'
 
 function computerPlay(){
     let number = Math.floor(Math.random() * 3) +1;
