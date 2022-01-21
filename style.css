@@ -4,8 +4,6 @@ body{
     color: #3C403D;
   }
   
-
-
 header, main, footer{
     display: flex;
     flex-direction: column;
@@ -23,11 +21,16 @@ main{
   
 #gameField{
     display: flex;
-    height: 400px;
+    flex: auto;
+    height: 500px;
     width: 100vh;
     background-color: #39603D;
     box-shadow: 0px 10px 10px #3C403D;
-  }
+    font-family: callie chalk font;
+    color: rgb(243, 243, 243);
+    padding: 10px;
+    box-sizing: border-box; /* Esto sirve para que no se modifique el tamano de la caja al agregar un padding */
+}
 
 #buttons{
     display: flex;
