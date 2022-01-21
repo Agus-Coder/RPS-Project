@@ -6,7 +6,7 @@ let userWin = 'Le ganaste a la CPU! Felicitaciones!';
 let partidas = 0;
 let userPoints = 0;
 let cpuPoints = 0;
-let juegos = prompt("Ingrese el numero de juegos")
+// let juegos = prompt("Ingrese el numero de juegos")
 
 const start = document.querySelector('#start')
 const rock = document.querySelector('#Rock')

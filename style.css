@@ -1,0 +1,46 @@
+body{
+    margin: 0;
+    background-color: #e9e0b9;
+    color: #3C403D;
+  }
+  
+  #rock, #paper, #scissors, #start{
+    display: flex;
+    margin: 0px 50px 0px 50px;
+  
+  }
+  header, main, footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+  }
+  
+  header{
+    background-color: #ce5e31;
+    box-shadow: 0px 5px 15px #3C403D;
+  }
+  
+  main{
+    padding: 75px 0 150px 0;
+  }
+  
+  #gameField{
+    display: flex;
+    height: 400px;
+    width: 100vh;
+    background-color: #39603D;
+    box-shadow: 0px 10px 10px #3C403D;
+    
+  }
+  #buttons{
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+  }
+  
+  footer{
+    background-color: #ce5d31;
+    padding: 10px 0px 10px 0px;
+    color: honeydew;
+  }
