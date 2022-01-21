@@ -6,15 +6,16 @@ let userWin = 'Le ganaste a la CPU! Felicitaciones!';
 let partidas = 0;
 let userPoints = 0;
 let cpuPoints = 0;
-// let juegos = prompt("Ingrese el numero de juegos")
+let juegos;
 
 const start = document.querySelector('#start')
-const rock = document.querySelector('#Rock')
-const paper = document.querySelector('#Paper')
-const scissors = document.querySelector('#Scissors')
+const rock = document.querySelector('#rock')
+const paper = document.querySelector('#paper')
+const scissors = document.querySelector('#scissors')
 start.addEventListener('click', inicio)
 
 function inicio(){
+    juegos = prompt("Ingrese el numero de juegos");
     rock.addEventListener('click', playerRock)
     paper.addEventListener('click', playerPaper)
     scissors.addEventListener('click', playerScissors)
