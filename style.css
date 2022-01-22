@@ -1,27 +1,31 @@
+@import url('http://fonts.cdnfonts.com/css/callie-chalk-font');
+
 body{
     margin: 0;
     background-color: #e9e0b9;
     color: #3C403D;
   }
-  
+
 header, main, footer{
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  
+
 header{
     background-color: #ce5e31;
     box-shadow: 0px 5px 15px #3C403D;
   }
-  
+
 main{
     padding: 75px 0 150px 0;
   }
-  
+
 #gameField{
     display: flex;
     flex: auto;
+    flex-direction: column;
+    justify-content: center;
     height: 500px;
     width: 100vh;
     background-color: #39603D;
@@ -30,6 +34,33 @@ main{
     color: rgb(243, 243, 243);
     padding: 10px;
     box-sizing: border-box; /* Esto sirve para que no se modifique el tamano de la caja al agregar un padding */
+}
+
+#title{
+  display: flex;
+  justify-content: center;
+  
+}
+
+#jugada{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  padding: 10px;
+}
+
+#result{
+  display: flex;
+  height: 200px;
+  border: solid red 1px;
+  justify-content: center;
+  align-items: center;
+}
+
+#scores{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
 }
 
 #buttons{

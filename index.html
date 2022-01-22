@@ -7,21 +7,35 @@
     <title>Document</title>
     <script src="js-file.js" defer></script>
     <link rel="stylesheet" href="style.css">
-    <style>
-        @import url('http://fonts.cdnfonts.com/css/callie-chalk-font');
-    </style>
+
 </head>
 <body>
     <header>
         <h1>Rock Paper Scissors Game</h1>
     </header>
     <main>
-        <div id="gameField">Campo de juego
-            <div id="title"></div>
-            <div></div>
+        <div id="gameField">
 
+            <div id="title">Campo de juego</div>
+
+            <div id="jugada">
+                <div>Jugador</div>
+                <div>Cpu</div>
+                <div id="jugadaUser"></div>
+                <div id="jugadaCpu"></div>
+            </div>
+
+            <div id="result"></div>
+
+            <div id="scores">
+                <div>Jugador</div>
+                <div>Cpu</div>
+                <div id="scoreUser"></div>
+                <div id="scoreCpu"></div>      
+            </div>
+            
         </div>
-        
+
         <div id="buttons">
             <button id="start">Start</button>
             <button id="rock">Rock</button>

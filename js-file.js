@@ -8,11 +8,18 @@ let userPoints = 0;
 let cpuPoints = 0;
 let juegos;
 
-const start = document.querySelector('#start')
-const rock = document.querySelector('#rock')
-const paper = document.querySelector('#paper')
-const scissors = document.querySelector('#scissors')
-start.addEventListener('click', inicio)
+const start = document.querySelector('#start');
+const rock = document.querySelector('#rock');
+const paper = document.querySelector('#paper');
+const scissors = document.querySelector('#scissors');
+start.addEventListener('click', inicio);
+
+const jugadaUser = document.querySelector('#jugadaUser');
+const jugadaCpu = document.querySelector('#jugadaCpu');
+const result = document.querySelector('#result');
+const scores = document.querySelector('#scores');
+const scoreUser = document.querySelector('#scoreUser')
+const scoreCpu = document.querySelector('#scoreCpu')
 
 function inicio(){
     juegos = prompt("Ingrese el numero de juegos");
@@ -23,13 +30,24 @@ function inicio(){
 
 function computerPlay(){
     let number = Math.floor(Math.random() * 3) +1;
-    return number;
+    return number;  
+}
+
+function computerPizarra(){
+    if(computerSelection==1){
+        jugadaCpu.textContent = `Piedra`
+    }else if(computerSelection==2){
+        jugadaCpu.textContent = `Papel`
+    }else if(computerSelection==3){
+        jugadaCpu.textContent = `Tijera`
+    }
 }
 
 function playround(){ 
 
     if(partidas<juegos){
         if(playerSelection === computerSelection){
+            result.textContent = ('Empate!');
             console.log(empate);
        }
        else if(
@@ -37,6 +55,7 @@ function playround(){
             playerSelection==2 && computerSelection==3 ||
             playerSelection==1 && computerSelection==2  ) {
             cpuPoints = cpuPoints + 1;
+            result.textContent = ('La CPU Ha ganado! Intentalo de nuevo')
             console.log(cpuWin);
         }
         else if(
@@ -44,10 +63,14 @@ function playround(){
             computerSelection==2 && playerSelection==3 ||
             computerSelection==1 && playerSelection==2  ){
             userPoints = userPoints + 1;
+            result.textContent = ('Le ganaste a la CPU! Felicitaciones!')
             console.log(userWin);
 
         }
         partidas = partidas + 1;
+    
+        scoreUser.textContent = (`${userPoints}`)
+        scoreCpu.textContent = (`${cpuPoints}`)
     }
 
     if(partidas>=juegos){
@@ -69,6 +92,8 @@ function playerRock(){
     computerSelection = computerPlay();
     playround();
     console.log(partidas)
+    jugadaUser.textContent = `Piedra`
+    computerPizarra()
 }
 
 function playerPaper(){
@@ -76,6 +101,8 @@ function playerPaper(){
     computerSelection = computerPlay();
     playround();
     console.log(partidas)
+    jugadaUser.textContent = `Papel`
+    computerPizarra()
 }
 
 function playerScissors(){
@@ -83,4 +110,6 @@ function playerScissors(){
     computerSelection = computerPlay();
     playround();
     console.log(partidas)
+    jugadaUser.textContent = `Tijera`
+    computerPizarra()
 }
